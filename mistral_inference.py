@@ -1,6 +1,5 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 
-# Hugging Face에 올라온 Mistral 모델 사용
 model_name = "hajeong67/mistral-7b-merged"
 
 # 모델 및 토크나이저 로드
@@ -12,7 +11,7 @@ model = AutoModelForCausalLM.from_pretrained(
     trust_remote_code=True
 )
 
-# 텍스트 생성 파이프라인 구성 (샘플링 활성화 + 경고 제거)
+# 텍스트 생성 파이프라인 구성 
 generator = pipeline(
     "text-generation",
     model=model,
